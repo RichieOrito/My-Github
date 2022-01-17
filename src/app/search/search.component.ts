@@ -11,15 +11,15 @@ export class SearchComponent implements OnInit {
 
   username!: string;
   isNotEmpty!: boolean;
-  profileService: ProfileService;  
+  profileService: ProfileService;
 
   constructor(profileService: ProfileService, private router: Router) { 
     this.profileService = profileService;
   }
 
-  initiateSearch(){
+  startSearch(){
     if(this.username){
-      this.profileService.getProfile(this.username);
+      this.profileService.getData(this.username);
       this.router.navigate(['../result']);
     }else{
       this.isNotEmpty = true;
