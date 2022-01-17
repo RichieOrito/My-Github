@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  username!: string;
+  isNotEmpty!: boolean;
+  profileService: ProfileService;  
+
+  constructor(profileService: ProfileService, private router: Router) { 
+    this.profileService = profileService;
+  }
+
+  initiateSearch(){
+    if(this.username){
+      this.profileService.getProfile(this.username);
+      this.router.navigate(['../result']);
+    }else{
+      this.isNotEmpty = true;
+    }
+  }
+  hideAlert(){
+    this.isNotEmpty = false;
+  }
 
   ngOnInit(): void {
+    this.isNotEmpty = false;
   }
 
 }
