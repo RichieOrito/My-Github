@@ -22,12 +22,12 @@
             <p class="username"><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">@{{ user.login }} </a></p>
             <p class="updated">Updated {{ user.updated_at | dateCount}}</p>
             <p>{{ user.bio }}</p>
-            <small><i class="fa fa-map-marker" aria-hidden="true"></i>{{ user.location }}</small>
+            <small><i class="fa fa-map-marker" aria-hidden="true"></i><span class="loca">{{ user.location }};</span></small>
             <div class="foll">
-                <small><i class="fa fa-users" aria-hidden="true"></i>{{ user.following }} following</small>
-            <small><i class="fa fa-user-friends" aria-hidden="true"></i>{{ user.followers }} followers</small>
+                <small><i class="fa fa-users" aria-hidden="true"></i><span class="loca">{{ user.following }} following;</span></small>
+            <small><i class="fa fa-user-friends" aria-hidden="true"></i><span class="loca">{{ user.followers }} followers;</span></small>
             </div>
-                <small><i class="fas fa-calendar"></i>{{ user.created_at | date }}</small>
+                <small><i class="fas fa-calendar"></i><span class="loca">{{ user.created_at | date }}</span></small>
         </div>
         <div class="col-lg-4 mt-3 public-repos">
                 <h2 class="mb-0">Public Repositories</h2>

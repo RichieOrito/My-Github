@@ -72,6 +72,12 @@ h2,h3{
   color: var(--main4-color);
 }
 
+.loca{
+  color: var(--main2-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .project-info{
   display: flex;
   justify-content: space-around;
@@ -106,7 +112,7 @@ h2,h3{
 .repos{
   
   font-size: 2rem;
-  color: var(--main3-color);
+  color: var(--main2-color);
 }
 
 .load{
