@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ResultComponent } from './result/result.component';
 import { SearchComponent } from './search/search.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { componentFactoryName } from '@angular/compiler';
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent},
@@ -16,6 +15,7 @@ const routes: Routes = [
 ];                                                  // The wildcards define a route that is not present in our routes array. So in the case a user tries to 
                                                     //look up a route that does not exist in the routes of our app, they will be taken to the not-found component
 @NgModule({
+  declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
