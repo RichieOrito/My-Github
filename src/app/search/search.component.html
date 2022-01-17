@@ -1,1 +1,23 @@
-<p>search works!</p>
+<div class="container">
+  <div class="row text-center">
+    <div class="title">
+      <div class="logo">
+        <i class="fab fa-github-square"></i>
+      </div>
+      <div class="github">My Github</div>
+      <div class="search text-uppercase my-4">Search</div>
+    </div>
+    <div class="form">
+      <form action="" (ngSubmit)="startSearch()">
+        <div class="my-4">
+          <input class="form-control" type="text" id="username" name="username" [(ngModel)]="username"
+          placeholder="Enter your User Name" (focus)='hideAlert()' required/>
+          <div class="text-danger alert" *ngIf='isNotEmpty'>You must enter a Username.</div>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">Search</i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
