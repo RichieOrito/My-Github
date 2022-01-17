@@ -1,1 +1,65 @@
-<p>result works!</p>
+<div class="container" >
+  <div class="header mb-5">
+    <div class="header-logo" routerLink='../search'>
+      <div class="logo logo-results mx-2">
+        <i class="fab fa-github-square" aria-hidden="true"></i>
+      </div>
+      <div class="logo-text">
+        <div class="github my-2">My GitHub</div>
+        <div class="search text-uppercase">Search</div>
+      </div>
+    </div>
+    <div class="back">
+        <i class="fas fa-search" routerLink='../search'></i>
+    </div>
+  </div>
+  <div class="row user mt-5" *ngIf='isDoneLoading'>
+        <div class="col-lg-4">
+            <img src= {{user.avatar_url}} alt="User Profile Picture" class="profile-pic">
+        </div>
+        <div class="col-lg-4 profile-details">
+            <h2 class="name mb-0 mt-3"><strong><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">{{ user.name }}</a></strong></h2>
+            <p class="username"><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">@{{ user.login }} </a></p>
+            <p class="updated">Updated {{ user.updated_at | dateCount}}</p>
+            <p>{{ user.bio }}</p>
+            <small><i class="fa fa-map-marker" aria-hidden="true"></i>{{ user.location }}</small>
+            <div class="foll">
+                <small><i class="fa fa-users" aria-hidden="true"></i>{{ user.following }} following</small>
+            <small><i class="fa fa-user-friends" aria-hidden="true"></i>{{ user.followers }} followers</small>
+            </div>
+                <small><i class="fas fa-calendar"></i>{{ user.created_at | date }}</small>
+        </div>
+        <div class="col-lg-4 mt-3 public-repos">
+                <h2 class="mb-0">Public Repositories</h2>
+                <h1 class="repos"><i class="fas fa-folder-plus"></i>{{ user.public_repos }}</h1>
+                <h2 class="mb-0">For hire</h2>
+                <h1 class="repos"> <i class="material-icons">work</i>{{ user.hireable }}</h1>
+        </div>
+  </div>
+  <hr>
+  <div class="row projects-container" *ngIf='isDoneLoading'>
+      <div class="project col s12 m5" *ngFor='let repo of repos, let i=index' >
+        <div class="card-panel">
+          <span class="white-text">
+          <div class="project-name">
+            
+              <h3><strong><a href="{{ repo.svn_url }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a></strong></h3>
+          </div>
+          <hr>
+          <div class="project-description">
+              <p appStrikethrough>{{ repo.description }}</p>
+          </div>  
+          </span>
+          <div class="project-info">
+            <p><i class="fas fa-code-branch"></i>{{ repo.forks_count }}</p>
+            <p><i class="fas fa-scroll"></i>{{ repo.language }}</p>
+          </div>
+      </div>
+      </div>
+  </div>
+</div>
+<div class="load" *ngIf='!isDoneLoading'>
+      <h1>
+          <i class="fas fa-spinner fa-spin"></i>
+      </h1>
+  </div>
