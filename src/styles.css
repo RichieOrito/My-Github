@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+  *{
+    padding: 0;
+    margin: 0;
+    font-family: 'Acme', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+    list-style: none;
+    text-decoration: none;
+  }
+  :root {
+    --main1-color: #3DB2FF;
+    --main2-color: #fff;
+    --main3-color: #000;
+    --main4-color: #FF2442;
+    --main5-color: #6f6f6f;
+  }
+
+  html, body {
+    height: 100%;
+  }
+  body {
+    background-color: var(--main2-color);
+    background-color: #FFB830;
+    color: var(--main3-color);
+  }
+
+  .github{
+    font-size: 5.2rem;
+    font-weight: 600;
+    color: var(--main1-color);
+  }
+
+  .logo{
+    font-size: 6.8rem;
+    color: var(--main4-color);
+  }
+
+  input{
+    text-align: center;
+  }
+
+  a{
+    text-decoration: none;
+    color: var(--main4-color);
+  }
+
+  a:hover{
+    color: var(--main3-color);
+  }
+
+  .search{
+    color: var(--main5-color);
+  }
+
+
+
