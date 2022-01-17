@@ -9,7 +9,7 @@
         <div class="search text-uppercase">Search</div>
       </div>
     </div>
-    <div class="back">
+    <div class="handlens">
         <i class="fas fa-search" routerLink='../search'></i>
     </div>
   </div>
@@ -30,10 +30,10 @@
                 <small><i class="fas fa-calendar"></i><span class="loca">{{ user.created_at | date }}</span></small>
         </div>
         <div class="col-lg-4 mt-3 public-repos">
-                <h2 class="mb-0">Public Repositories</h2>
-                <h1 class="repos"><i class="fas fa-folder-plus"></i>{{ user.public_repos }}</h1>
-                <h2 class="mb-0">For hire</h2>
-                <h1 class="repos"> <i class="material-icons">work</i>{{ user.hireable }}</h1>
+                <h2 class="mb-0">Public Repositories:</h2>
+                <h1 class="repos"><i class="fas fa-folder-plus"></i>{{ user.public_repos }};</h1>
+                <h2 class="mb-0">For hire:</h2>
+                <h1 class="repos"> <i class="material-icons">work</i>{{ user.hireable }};</h1>
         </div>
   </div>
   <hr>

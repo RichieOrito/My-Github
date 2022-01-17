@@ -7,9 +7,13 @@
 }
 
 .search{
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   padding-top: 0.8rem;
   padding-left: 0.3rem;
+}
+
+.fa-search{
+  color: var(--main5-color);
 }
 
 .logo-text{
@@ -30,12 +34,12 @@
   justify-content: space-between;
 }
 
-.back{
+.handlens{
   font-size: 2.8rem;
   margin-top: auto;
 }
 
-.back:hover, .header-logo:hover{
+.handlens:hover, .header-logo:hover{
   cursor: pointer;
 }
 
