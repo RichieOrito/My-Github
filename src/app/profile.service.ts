@@ -3,6 +3,7 @@ import { User } from './user';
 import { Repo } from './repo';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class ProfileService {
     }
 
     let promise: any = new Promise((resolve, reject) => {
-      this.http.get<ApiResponseUser>("https://api.github.com/users/" + username).toPromise().then(response => {
+      this.http.get<ApiResponseUser>(environment.apiUrl + username).toPromise().then(response => {
         this.user.login = response!.login;
         this.user.name = response!.name;
         this.user.location = response!.location;
