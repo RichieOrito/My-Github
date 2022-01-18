@@ -20,14 +20,13 @@
         <div class="col-lg-4 profile-details">
             <h2 class="name mb-0 mt-3"><strong><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">{{ user.name }}</a></strong></h2>
             <p class="username"><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">@{{ user.login }} </a></p>
-            <p class="updated">Created on: {{ user.created_at }}</p>
+            <p class="updated">Created on: {{user.created_at | date}} </p>
             <p>{{ user.bio }}</p>
             <small><i class="fa fa-map-marker" aria-hidden="true"></i><span class="loca">{{ user.location }};</span></small>
             <div class="foll">
                 <small><i class="fa fa-users" aria-hidden="true"></i><span class="loca">{{ user.following }} following;</span></small>
             <small><i class="fa fa-user-friends" aria-hidden="true"></i><span class="loca">{{ user.followers }} followers;</span></small>
             </div>
-                <small><i class="fas fa-calendar"></i><span class="loca">{{user.created_at | date}}</span></small>
         </div>
         <div class="col-lg-4 mt-3 public-repos">
                 <h2 class="mb-0">Public Repositories:</h2>
@@ -54,7 +53,7 @@
           <div class="project-info">
             <p><i class="fas fa-code-branch"></i>{{ repo.forks_count }}</p>
             <p><i class="fas fa-circle"></i>{{ repo.language }}</p>
-            <p><i class="fas fa-clock"></i>{{user.updated_at | dateCount}}</p>
+            <p><i class="fas fa-clock"></i>{{repo.created_at | dateCount}}</p>
           </div>
       </div>
       </div>

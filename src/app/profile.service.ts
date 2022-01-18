@@ -16,8 +16,8 @@ export class ProfileService {
 
 
   constructor(private http: HttpClient, private router: Router) {
-    this.user = new User("", "", "", 0, 0, 0, new Date(), "", "", "", "", new Date());
-    this.repo = new Repo("", "", 0, "", "");
+    this.user = new User("", "", "", 0, 0, 0, new Date(),"", "", "", "", new Date());
+    this.repo = new Repo("", "", 0, "", "",new Date());
     this.router = router;
   }
 
@@ -31,7 +31,7 @@ export class ProfileService {
     interface ApiResponseRepo{
   
       name: string, description: string,  forks_count: number;
-      language: string; svn_url: string;
+      language: string; svn_url: string, created_at: Date;
     }
 
     let promise: any = new Promise((resolve, reject) => {
@@ -66,7 +66,8 @@ export class ProfileService {
          this.repo.forks_count = response![i].forks_count;
          this.repo.language = response![i].language;
          this.repo.svn_url = response![i].svn_url;
-         this.repo = new Repo(this.repo.name, this.repo.description, this.repo.forks_count, this.repo.language, this.repo.svn_url);
+         this.repo.created_at = response![i].created_at;
+         this.repo = new Repo(this.repo.name, this.repo.description, this.repo.forks_count, this.repo.language, this.repo.svn_url, this.repo.created_at);
          this.repos.push(this.repo);
        }
 
