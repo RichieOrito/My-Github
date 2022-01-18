@@ -27,7 +27,7 @@
                 <small><i class="fa fa-users" aria-hidden="true"></i><span class="loca">{{ user.following }} following;</span></small>
             <small><i class="fa fa-user-friends" aria-hidden="true"></i><span class="loca">{{ user.followers }} followers;</span></small>
             </div>
-                <small><i class="fas fa-calendar"></i><span class="loca">{{ user.created_at | date }}</span></small>
+                <small><i class="fas fa-calendar"></i><span class="loca">{{user.created_at | date}}</span></small>
         </div>
         <div class="col-lg-4 mt-3 public-repos">
                 <h2 class="mb-0">Public Repositories:</h2>
@@ -53,7 +53,7 @@
           <div class="project-info">
             <p><i class="fas fa-code-branch"></i>{{ repo.forks_count }}</p>
             <p><i class="fas fa-circle"></i>{{ repo.language }}</p>
-            <p><i class="fas fa-clock"></i>Updated:{{user.updated_at | dateCount}}</p>
+            <p><i class="fas fa-clock"></i>{{user.updated_at | dateCount}}</p>
           </div>
       </div>
       </div>
