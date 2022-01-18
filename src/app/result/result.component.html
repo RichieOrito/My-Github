@@ -20,7 +20,7 @@
         <div class="col-lg-4 profile-details">
             <h2 class="name mb-0 mt-3"><strong><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">{{ user.name }}</a></strong></h2>
             <p class="username"><a href="{{ user.html_url }}" target="_blank" rel="noopener noreferrer">@{{ user.login }} </a></p>
-            <p class="updated">Updated {{ user.updated_at | dateCount}}</p>
+            <p class="updated">Created on: {{ user.created_at }}</p>
             <p>{{ user.bio }}</p>
             <small><i class="fa fa-map-marker" aria-hidden="true"></i><span class="loca">{{ user.location }};</span></small>
             <div class="foll">
