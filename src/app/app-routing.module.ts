@@ -8,8 +8,6 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent},
   { path: 'result', component: ResultComponent},
   { path: '404', component: NotFoundComponent},
-  { path:'**', component:NotFoundComponent},
-
   { path: '', redirectTo:'search', pathMatch:'full'}, //I have created an empty path with the redirectTo property that points to the path of the searchComponent.
   { path: '**', redirectTo:'404', pathMatch:'full'} //I have then defined a route whose path has wildcards and directed this path to the NotFoundComponent.
 ];                                                  // The wildcards define a route that is not present in our routes array. So in the case a user tries to 
