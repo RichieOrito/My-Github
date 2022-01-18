@@ -52,7 +52,8 @@
           </span>
           <div class="project-info">
             <p><i class="fas fa-code-branch"></i>{{ repo.forks_count }}</p>
-            <p><i class="fas fa-scroll"></i>{{ repo.language }}</p>
+            <p><i class="fas fa-circle"></i>{{ repo.language }}</p>
+            <p><i class="fas fa-clock"></i>Updated:{{user.updated_at | dateCount}}</p>
           </div>
       </div>
       </div>
